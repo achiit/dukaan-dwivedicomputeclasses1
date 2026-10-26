@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1d4ed8" />
+  <title>Dwivedi Compute Classes | Learn. Practice. Grow.</title>
+  <style>
+    :root{--blue:#1d4ed8;--dark:#1e3a8a;--light:#f8fafc;--accent:#60a5fa;--text:#1f2937;--muted:#64748b;--border:#e2e8f0;--white:#fff;--green:#15803d}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.container{width:min(1120px,92%);margin:auto}
+    .topbar{background:var(--dark);color:#eaf2ff;font-size:.88rem;padding:8px 0}.topbar .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--dark);line-height:1.15}.logo{height:46px;width:46px;border-radius:13px;background:var(--blue);color:white;display:grid;place-items:center;font-size:1.2rem;box-shadow:0 8px 20px #1d4ed833}.brand small{display:block;font-size:.72rem;font-weight:600;color:var(--muted);margin-top:4px}
+    .links{display:flex;align-items:center;gap:23px;font-size:.94rem;font-weight:650}.links a:hover{color:var(--blue)}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:0;border-radius:10px;padding:12px 18px;background:var(--blue);color:white;font-weight:750;cursor:pointer;transition:.2s}.btn:hover{background:var(--dark);transform:translateY(-1px)}.btn.outline{background:white;color:var(--blue);border:1px solid #bfdbfe}.btn.light{background:#eff6ff;color:var(--dark)}.btn.small{padding:9px 13px;font-size:.9rem}.menu-btn{display:none;background:#eff6ff;color:var(--dark);border:0;border-radius:9px;padding:9px 12px;font-size:1.2rem}
+    .hero{background:linear-gradient(115deg,#eff6ff 0%,#fff 60%,#dbeafe 100%);padding:76px 0 68px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:46px}.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#dbeafe;color:var(--dark);border-radius:999px;padding:7px 12px;font-weight:750;font-size:.83rem}.eyebrow span{height:8px;width:8px;background:#22c55e;border-radius:50%}h1{font-size:clamp(2.5rem,5vw,4.3rem);line-height:1.08;letter-spacing:-.045em;margin:20px 0}h1 em{font-style:normal;color:var(--blue)}.hero p{font-size:1.12rem;color:#475569;max-width:590px}.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}.trust{display:flex;gap:18px;flex-wrap:wrap;color:#475569;font-size:.9rem;font-weight:650}.trust span:before{content:"✓";color:var(--green);font-weight:900;margin-right:7px}
+    .visual{min-height:370px;position:relative;display:grid;place-items:center}.visual-card{background:white;border:1px solid #dbeafe;border-radius:24px;padding:26px;width:min(100%,400px);box-shadow:0 24px 70px #1e3a8a1a;position:relative;z-index:1}.screen{background:#0f172a;border-radius:16px;padding:17px;color:white}.screen-head{display:flex;gap:6px;margin-bottom:17px}.screen-head i{width:8px;height:8px;border-radius:50%;background:#60a5fa}.screen-title{font-weight:800;font-size:1.1rem}.screen-sub{font-size:.78rem;color:#cbd5e1}.code-lines{margin-top:20px;display:grid;gap:10px}.code-lines b{height:8px;border-radius:6px;background:#334155;display:block}.code-lines b:nth-child(1){width:80%;background:#60a5fa}.code-lines b:nth-child(2){width:62%;background:#a78bfa}.code-lines b:nth-child(3){width:90%}.code-lines b:nth-child(4){width:48%;background:#34d399}.floating{position:absolute;background:white;border:1px solid var(--border);padding:13px 16px;border-radius:14px;box-shadow:0 10px 30px #0f172a12;font-weight:750}.float-one{top:28px;right:-5px}.float-two{bottom:25px;left:-10px}.float-icon{font-size:1.3rem;margin-right:7px}
+    section{padding:76px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 38px}.section-head .kicker{color:var(--blue);text-transform:uppercase;letter-spacing:.12em;font-weight:850;font-size:.78rem}.section-head h2{font-size:clamp(1.9rem,3vw,2.7rem);line-height:1.15;margin:9px 0 12px;letter-spacing:-.03em}.section-head p{color:var(--muted);margin:0}.stats{padding:0 0 30px;background:var(--light)}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.stat{background:white;border:1px solid var(--border);padding:22px;border-radius:15px;text-align:center}.stat strong{display:block;font-size:1.55rem;color:var(--blue)}.stat span{font-size:.9rem;color:var(--muted)}
+    .courses{background:var(--light)}.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.course{background:white;border:1px solid var(--border);border-radius:17px;padding:23px;display:flex;flex-direction:column;box-shadow:0 6px 18px #0f172a05}.course-icon{width:52px;height:52px;border-radius:14px;background:#dbeafe;display:grid;place-items:center;font-size:1.6rem}.course h3{margin:17px 0 6px;font-size:1.16rem}.course p{color:var(--muted);font-size:.94rem;margin:0 0 16px}.course-meta{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-top:1px solid var(--border);margin-top:auto;font-size:.9rem}.course-meta strong{color:var(--dark)}.course .btn{margin-top:10px}.note{font-size:.82rem;color:var(--muted);text-align:center;margin-top:18px}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.feature{padding:24px 22px;border:1px solid var(--border);border-radius:16px}.feature .icon{font-size:1.7rem}.feature h3{margin:9px 0 5px}.feature p{margin:0;color:var(--muted);font-size:.95rem}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}.step{padding:25px;border-radius:16px;background:#f8fafc;border:1px solid var(--border)}.step:before{counter-increment:step;content:"0" counter(step);font-weight:900;color:var(--blue);font-size:1.6rem}.step h3{margin:7px 0}.step p{margin:0;color:var(--muted)}
+    .about-band{background:var(--dark);color:white;padding:54px 0}.about-row{display:flex;justify-content:space-between;align-items:center;gap:30px}.about-row h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.2;margin:0 0 10px}.about-row p{color:#dbeafe;margin:0;max-width:690px}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:start}.contact-card{background:var(--light);border:1px solid var(--border);padding:26px;border-radius:18px}.contact-item{display:flex;gap:13px;margin:19px 0}.contact-item .icon{font-size:1.2rem}.contact-item strong{display:block}.contact-item span{color:var(--muted);font-size:.93rem}.form{display:grid;gap:15px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-size:.9rem;font-weight:750;margin-bottom:6px}input,select,textarea{width:100%;border:1px solid #cbd5e1;border-radius:9px;padding:12px 13px;background:white;color:var(--text);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #3b82f626}textarea{min-height:110px;resize:vertical}.form-note{font-size:.82rem;color:var(--muted)}.success{display:none;padding:12px;border-radius:9px;background:#dcfce7;color:#166534;font-weight:650}.error{color:#b91c1c;font-size:.9rem}
+    footer{background:#0f172a;color:#cbd5e1;padding:44px 0 18px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}.footer-brand{color:white;font-size:1.1rem;font-weight:850}.footer-grid p{font-size:.92rem;color:#94a3b8;max-width:370px}.footer-grid h4{color:white;margin:0 0 13px}.footer-links{display:grid;gap:8px;font-size:.92rem}.footer-links a:hover{color:white}.copyright{border-top:1px solid #334155;margin-top:32px;padding-top:17px;font-size:.85rem;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .wa{position:fixed;right:20px;bottom:20px;z-index:9;border-radius:999px;background:#16a34a;color:white;padding:13px 17px;font-weight:800;box-shadow:0 10px 25px #16653440}.wa:hover{background:#15803d}
+    @media(max-width:850px){.links{gap:13px}.hero-grid{gap:25px}.course-grid,.features-grid{grid-template-columns:repeat(2,1fr)}.stat-grid{grid-template-columns:repeat(2,1fr)}.float-one{right:0}.contact-grid{grid-template-columns:1fr}}
+    @media(max-width:680px){.topbar .container{justify-content:center;text-align:center}.nav{min-height:68px}.menu-btn{display:block}.links{display:none;position:absolute;top:68px;left:0;right:0;background:white;border-bottom:1px solid var(--border);padding:18px 4%;align-items:stretch;flex-direction:column;gap:15px}.links.open{display:flex}.links .btn{width:100%}.hero{padding:48px 0}.hero-grid{grid-template-columns:1fr}.visual{min-height:300px}.visual-card{padding:18px}.float-one{right:0;top:8px}.float-two{left:0;bottom:7px}section{padding:57px 0}.course-grid,.features-grid,.steps,.footer-grid{grid-template-columns:1fr}.stat-grid{gap:10px}.stat{padding:16px 10px}.about-row{align-items:flex-start;flex-direction:column}.form-row{grid-template-columns:1fr}.wa{right:12px;bottom:12px;padding:11px 14px}.copyright{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>📍 Akadapura Mohalla, Moth, Jhansi, Uttar Pradesh</span><span>🕒 Open daily · 8:00 AM – 6:00 PM</span></div></div>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Dwivedi Compute Classes home"><span class="logo">DC</span><span>Dwivedi Compute Classes<small>Learn Computer Skills, Build Your Future</small></span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="links" id="navLinks" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#courses">Courses</a><a href="#admission">Admission</a><a href="#contact">Contact</a>
+        <a class="btn small" href="tel:+918009679002">Call Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span></span> Your future starts with digital skills</span>
+          <h1>Build skills.<br><em>Build your future.</em></h1>
+          <p>Learn practical computer skills in a supportive learning environment at Dwivedi Compute Classes, Moth, Jhansi.</p>
+          <div class="hero-actions"><a class="btn" href="#courses">Explore Courses <span>→</span></a><a class="btn outline" href="#admission">Apply for Admission</a></div>
+          <div class="trust"><span>Practical learning</span><span>Installment-based fees</span><span>Beginner-friendly</span></div>
+        </div>
+        <div class="visual" aria-label="Illustration of computer learning">
+          <div class="floating float-one"><span class="float-icon">💻</span> Learn by doing</div>
+          <div class="visual-card"><div class="screen"><div class="screen-head"><i></i><i></i><i></i></div><div class="screen-title">Digital Skills Lab</div><div class="screen-sub">Practice • Create • Improve</div><div class="code-lines"><b></b><b></b><b></b><b></b></div></div><div style="display:flex;justify-content:space-between;gap:10px;margin-top:17px"><div><strong>Learn at your pace</strong><div style="font-size:.83rem;color:#64748b">Build confidence with technology</div></div><span style="font-size:2rem">🎓</span></div></div>
+          <div class="floating float-two"><span class="float-icon">📘</span> Skills for everyday life</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats"><div class="container stat-grid">
+      <div class="stat"><strong>Practical</strong><span>Hands-on learning</span></div><div class="stat"><strong>Flexible</strong><span>Installment fee policy</span></div><div class="stat"><strong>Multiple</strong><span>Courses to explore</span></div><div class="stat"><strong>Local</strong><span>Support in Moth, Jhansi</span></div>
+    </div></div>
+
+    <section id="about"><div class="container">
+      <div class="section-head"><div class="kicker">About the institute</div><h2>Computer education for real-world confidence</h2><p>Our goal is to help learners build useful digital skills step by step, from computer fundamentals to office productivity and accounting tools.</p></div>
+      <div class="features-grid">
+        <article class="feature"><div class="icon">🎯</div><h3>Our Mission</h3><p>Make computer learning approachable and practical so students can use technology with confidence.</p></article>
+        <article class="feature"><div class="icon">🌱</div><h3>Our Approach</h3><p>Focus on practice, clear explanations and steady improvement at every stage of learning.</p></article>
+        <article class="feature"><div class="icon">🚀</div><h3>Why Digital Skills?</h3><p>Computer knowledge can support education, daily tasks and a wide range of future learning opportunities.</p></article>
+      </div>
+    </div></section>
+
+    <section class="courses" id="courses"><div class="container">
+      <div class="section-head"><div class="kicker">Explore courses</div><h2>Find a course that fits your goals</h2><p>Explore these suggested courses and contact the institute to confirm current fees, duration and batch availability.</p></div>
+      <div class="course-grid" id="courseGrid"></div>
+      <p class="note">Course fees and durations shown are suggested values and must be confirmed by the institute before publication.</p>
+    </div></section>
+
+    <section><div class="container">
+      <div class="section-head"><div class="kicker">Your learning journey</div><h2>Getting started is simple</h2><p>Have a question? Reach out and discuss the course that suits you.</p></div>
+      <div class="steps"><article class="step"><h3>Explore courses</h3><p>Review course topics, suggested durations and fees.</p></article><article class="step"><h3>Talk to us</h3><p>Ask about eligibility, timings, installments and available batches.</p></article><article class="step"><h3>Apply for admission</h3><p>Share your details using the enquiry form and the institute can follow up.</p></article></div>
+    </div></section>
+
+    <div class="about-band"><div class="container about-row"><div><h2>Ready to start learning?</h2><p>Take the first step toward stronger computer skills. Contact Dwivedi Compute Classes for course and admission enquiries.</p></div><a class="btn light" href="#admission">Enquire About Admission →</a></div></div>
+
+    <section id="admission"><div class="container">
+      <div class="section-head"><div class="kicker">Admission enquiry</div><h2>Let’s find the right course for you</h2><p>Fill in the form to prepare an enquiry message. It will open WhatsApp so you can review and send it to the institute.</p></div>
+      <div class="contact-grid">
+        <div class="contact-card"><h3>Admission support</h3><p style="color:var(--muted)">We can discuss course details, installment options and batch availability.</p><div class="contact-item"><span class="icon">📞</span><div><strong>Call the institute</strong><span>+91 8009679002</span></div></div><div class="contact-item"><span class="icon">📍</span><div><strong>Visit us</strong><span>Akadapura Mohalla, Moth, Jhansi, Uttar Pradesh, Near Sunrise Public School</span></div></div><div class="contact-item"><span class="icon">🕒</span><div><strong>Business hours</strong><span>8:00 AM to 6:00 PM</span></div></div><a class="btn" target="_blank" rel="noopener" href="https://wa.me/918009679002?text=Hello%20Dwivedi%20Compute%20Classes%2C%20I%20would%20like%20to%20enquire%20about%20admission.">WhatsApp Enquiry ↗</a></div>
+        <div class="contact-card"><form id="admissionForm" class="form">
+          <div class="form-row"><div><label for="fullName">Full name *</label><input id="fullName" name="fullName" required maxlength="100" autocomplete="name" placeholder="Your full name"></div><div><label for="phone">Mobile number *</label><input id="phone" name="phone" required inputmode="tel" pattern="[0-9+ ()-]{10,18}" maxlength="18" placeholder="Your mobile number"></div></div>
+          <div class="form-row"><div><label for="course">Course of interest *</label><select id="course" name="course" required><option value="">Choose a course</option></select></div><div><label for="timing">Preferred contact time</label><select id="timing" name="timing"><option>Any time during business hours</option><option>Morning</option><option>Afternoon</option></select></div></div>
+          <div><label for="message">Your question (optional)</label><textarea id="message" name="message" maxlength="600" placeholder="Tell us what you would like to know..."></textarea></div>
+          <div class="success" id="successMsg" role="status">Your WhatsApp enquiry is ready. Review it in WhatsApp and press Send.</div>
+          <button class="btn" type="submit">Continue to WhatsApp ↗</button><div class="form-note">This static HTML page does not save applications to a database. Submitting opens WhatsApp with your enquiry details.</div>
+        </form></div>
+      </div>
+    </div></section>
+
+    <section class="courses" id="contact"><div class="container">
+      <div class="section-head"><div class="kicker">Contact us</div><h2>We’re here to help you get started</h2><p>Contact the institute for verified course details, admission availability and current fees.</p></div>
+      <div class="contact-grid">
+        <div class="contact-card"><div class="contact-item"><span class="icon">📍</span><div><strong>Address</strong><span>Akadapura Mohalla, Moth, Jhansi, Uttar Pradesh, Near Sunrise Public School</span></div></div><div class="contact-item"><span class="icon">📱</span><div><strong>Phone & WhatsApp</strong><span><a href="tel:+918009679002">+91 8009679002</a></span></div></div><div class="contact-item"><span class="icon">✉️</span><div><strong>Email</strong><span>Email address not provided</span></div></div><div class="contact-item"><span class="icon">🕒</span><div><strong>Business hours</strong><span>8:00 AM – 6:00 PM</span></div></div></div>
+        <div class="contact-card"><h3>Find us in Moth, Jhansi</h3><p style="color:var(--muted)">Use the address below to find the institute. Map location can be configured after the exact location is verified.</p><p><strong>Dwivedi Compute Classes</strong><br>Akadapura Mohalla, Moth, Jhansi, Uttar Pradesh<br>Near Sunrise Public School</p><a class="btn outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Dwivedi%20Compute%20Classes%2C%20Akadapura%20Mohalla%2C%20Moth%2C%20Jhansi">Open map search ↗</a></div>
+      </div>
+    </div></section>
+  </main>
+
+  <footer><div class="container"><div class="footer-grid"><div><div class="footer-brand">Dwivedi Compute Classes</div><p>Learn Computer Skills, Build Your Future. Practical computer learning in Moth, Jhansi.</p></div><div><h4>Quick links</h4><div class="footer-links"><a href="#about">About us</a><a href="#courses">Courses</a><a href="#admission">Admission enquiry</a><a href="#contact">Contact</a></div></div><div><h4>Get in touch</h4><div class="footer-links"><a href="tel:+918009679002">+91 8009679002</a><a target="_blank" rel="noopener" href="https://wa.me/918009679002">WhatsApp us</a><span>8:00 AM – 6:00 PM</span></div></div></div><div class="copyright"><span>© <span id="year"></span> Dwivedi Compute Classes. All rights reserved.</span><span>Blue & white · Built for learning</span></div></div></footer>
+  <a class="wa" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" href="https://wa.me/918009679002?text=Hello%20Dwivedi%20Compute%20Classes">☘ WhatsApp</a>
+
+  <script>
+    const courses = [
+      {name:"Basic Computer Course",duration:"3 months",fee:3000,icon:"💻",desc:"Build a foundation in computer operation, files, typing and everyday digital skills."},
+      {name:"CCC Preparation",duration:"3 months",fee:3500,icon:"📘",desc:"Prepare with computer fundamentals, office tools, internet basics and practice."},
+      {name:"MS Office & Productivity",duration:"2 months",fee:2500,icon:"📊",desc:"Learn practical document, spreadsheet and presentation skills."},
+      {name:"Advanced Excel",duration:"1 month",fee:2000,icon:"📈",desc:"Explore formulas, data handling, charts and productivity techniques."},
+      {name:"Tally Prime with GST",duration:"3 months",fee:5000,icon:"🧾",desc:"Learn accounting workflows and GST-related features in Tally Prime."},
+      {name:"Typing & Internet Basics",duration:"2 months",fee:2000,icon:"⌨️",desc:"Improve typing practice and learn useful internet skills."},
+      {name:"DCA",duration:"6 months",fee:8000,icon:"🎓",desc:"A suggested diploma course covering a range of computer applications."},
+      {name:"ADCA",duration:"12 months",fee:15000,icon:"🏅",desc:"A suggested advanced diploma course with broader application topics."}
+    ];
+    const money = amount => "₹" + amount.toLocaleString("en-IN");
+    const grid = document.getElementById("courseGrid");
+    const select = document.getElementById("course");
+    courses.forEach(c => {
+      const card = document.createElement("article");
+      card.className = "course";
+      card.innerHTML = `<div class="course-icon" aria-hidden="true">${c.icon}</div><h3>${c.name}</h3><p>${c.desc}</p><div class="course-meta"><span>Duration</span><strong>${c.duration}</strong></div><div class="course-meta"><span>Suggested fee</span><strong>${money(c.fee)}</strong></div><a class="btn outline small" href="#admission" data-course="${c.name}">Enquire about course</a>`;
+      grid.appendChild(card);
+      const option = document.createElement("option");
+      option.value = c.name;
+      option.textContent = c.name;
+      select.appendChild(option);
+    });
+    document.querySelectorAll("[data-course]").forEach(link => link.addEventListener("click", () => { select.value = link.dataset.course; }));
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.textContent = open ? "✕" : "☰";
+    });
+    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false"); menuBtn.textContent="☰"; }));
+    document.getElementById("admissionForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const form = e.currentTarget;
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const message = [
+        "Hello Dwivedi Compute Classes, I would like to enquire about admission.",
+        `Name: ${data.get("fullName")}`,
+        `Mobile: ${data.get("phone")}`,
+        `Course: ${data.get("course")}`,
+        `Preferred contact time: ${data.get("timing")}`,
+        data.get("message") ? `Question: ${data.get("message")}` : ""
+      ].filter(Boolean).join("\n");
+      document.getElementById("successMsg").style.display = "block";
+      window.open("https://wa.me/918009679002?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
